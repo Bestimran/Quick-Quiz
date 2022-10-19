@@ -1,11 +1,19 @@
-import React from 'react';
+import React from "react";
+import { useLoaderData } from "react-router-dom";
+import TopicData from "../TopicData/TopicData";
 
 const Topics = () => {
-    return (
-        <div>
-            <h1>this is topics page</h1>
-        </div>
-    );
+  const topics = useLoaderData();
+  console.log(topics)
+  return (
+    <div>
+      {topics.data.map((topic) => (
+        <TopicData 
+        key={topic.id} 
+        topic={topic}></TopicData>
+      ))}
+    </div>
+  );
 };
 
-export default Topics;<h1>this is topics page</h1>
+export default Topics;
