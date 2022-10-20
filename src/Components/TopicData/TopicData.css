@@ -1,5 +1,26 @@
-.Topic{
+.Topic {
+  background-color: azure;
+  margin:px;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 1px 1px 2px 2px;
+}
+.Topic img {
+  width: 280px;
+  border: 2px solid teal;
+  background-color: darkgray;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+.name.name {
+  font-size: 20px;
+  font-style: italic;
+  font-weight: bold;
+}
+.imran{
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  background-color: black ;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin:0 100px;
 }

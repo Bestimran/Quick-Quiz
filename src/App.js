@@ -4,6 +4,7 @@ import './App.css';
 import Blog from './Components/Blog/Blog';
 import Home from './Components/Home/Home';
 import Main from './Components/Layout/Main';
+import Practice from './Components/Practice/Practice';
 import Static from './Components/Static/Static';
 import Topics from './Components/Topics/Topics';
 
@@ -26,11 +27,19 @@ function App() {
       },
       {
         path:'static',
+        loader: () => fetch('https://openapi.programming-hero.com/api/quiz'),
         element:<Static></Static>
       },
       {
         path:'blog',
         element:<Blog></Blog>
+      },
+      {
+        path:'/topic/:practiceId',
+        loader: async ({params}) => {
+          return fetch(`https://openapi.programming-hero.com/api/quiz/${params.practiceId}`);
+        },
+        element:<Practice></Practice>
       }
 
      ]
